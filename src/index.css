@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-macaron-pink: #fbcfe8;
+  --color-macaron-lavender: #e9d5ff;
+  --color-macaron-blue: #bae6fd;
+  --color-macaron-yellow: #fef08a;
+  --color-macaron-green: #bbf7d0;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black font-sans selection:bg-macaron-pink antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-extrabold uppercase tracking-tight;
+  }
+}
+
+@layer components {
+  .brutalist-card {
+    @apply bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .brutalist-button {
+    @apply px-6 py-3 font-display font-bold uppercase bg-macaron-lavender border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all;
+  }
+
+  .brutalist-input {
+    @apply px-4 py-2 border-4 border-black focus:outline-none focus:bg-macaron-blue/30 transition-colors;
+  }
+}
